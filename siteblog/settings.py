@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i97p*5-jm3(n9vrg9wa9@zzh&hldr28bwf%wk5b)fmb*w(6^q(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1' ,'https://dartblogverisa2000.herokuapp.com']
 
 
 # Application definition
