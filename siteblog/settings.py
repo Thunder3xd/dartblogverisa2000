@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-i97p*5-jm3(n9vrg9wa9@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['dartblogverisa2000.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['https://site120.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
