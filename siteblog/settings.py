@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-i97p*5-jm3(n9vrg9wa9@zzh&hldr28bwf%wk5b)fmb*w(6^q('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','dartblogverisa2000.herokuapp.com']
 
@@ -88,8 +88,14 @@ WSGI_APPLICATION = 'siteblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd2c3nontt05a6t',
+        'USER': 'idjyewqyjwbryn',
+        'PASSWORD': '71f8a6fc317ec07bc651a7f14d77df9c762cf8b3213dd5a9654d6d7286f67761',
+        'HOST': 'ec2-54-170-90-26.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
+
+
     }
 }
 
@@ -137,9 +143,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'siteblog/static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #pentru poze
