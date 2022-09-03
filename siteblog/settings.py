@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i97p*5-jm3(n9vrg9wa9@zzh&hldr28bwf%wk5b)fmb*w(6^q('
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-i97p*5-jm3(n9vrg9wa9@zzh&hldr28bwf%wk5b)fmb*w(6^q(')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['127.0.0.1','dartblogverisa2000.herokuapp.com']
+ALLOWED_HOSTS = ['dartblogverisa2000.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -55,7 +55,6 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-
 ]
 
 ROOT_URLCONF = 'siteblog.urls'
@@ -88,7 +87,7 @@ WSGI_APPLICATION = 'siteblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd2c3nontt05a6t',
         'USER': 'idjyewqyjwbryn',
         'PASSWORD': '71f8a6fc317ec07bc651a7f14d77df9c762cf8b3213dd5a9654d6d7286f67761',
