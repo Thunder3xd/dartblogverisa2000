@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-i97p*5-jm3(n9vrg9wa9@
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ['dartblogverisa2000.herokuapp.com', '127.0.0.1']
-
 
 # Application definition
 
@@ -81,24 +79,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'siteblog.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd2c3nontt05a6t',
-        'USER': 'idjyewqyjwbryn',
-        'PASSWORD': '71f8a6fc317ec07bc651a7f14d77df9c762cf8b3213dd5a9654d6d7286f67761',
-        'HOST': 'ec2-54-170-90-26.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
-
-
+        'HOST': os.environ.get('POSTGRES_HOST', 'ec2-52-49-120-150.eu-west-1.compute.amazonaws.com'),
+        'NAME': os.environ.get('POSTGRES_DB', 'd6io51cglrjt8a'),
+        'USER': os.environ.get('POSTGRES_USER', 'hanjyceirvkxym'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', '54f50c8908c6a5854f1275d78875569d29ce0ec625095314a98abb7ac37a67ed'),
+        'PORT': os.environ.get('POSTGRES_PORT', '5432'),
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -117,7 +110,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -129,7 +121,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -140,17 +131,16 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #pentru poze
-MEDIA_URL = '/media/' # pentru poze  ca sa le faca save
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # pentru poze
+MEDIA_URL = '/media/'  # pentru poze  ca sa le faca save
 
-INTERNAL_IPS = ['127.0.0.1',]
+INTERNAL_IPS = ['127.0.0.1', ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
@@ -193,7 +183,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
         'tabSpaces': 4,
         'extraPlugins': ','.join([
-            'uploadimage', # the upload image feature
+            'uploadimage',  # the upload image feature
             # your extra plugins here
             'div',
             'autolink',
@@ -210,7 +200,6 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
-
 
 CACHES = {
     'default': {
